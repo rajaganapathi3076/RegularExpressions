@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,36 +14,27 @@ namespace RegularExpressions
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome User registration UC2");
-            Console.WriteLine("Enter your first name");
-            string firstname=Console.ReadLine();
-            Console.WriteLine("Enter your last name");
-            string lastname = Console.ReadLine();
+            Console.WriteLine("Enter your Email ID");
+            string EmailAddres=Console.ReadLine();
+           
 
-            if (IsValidFirstName(firstname))
+            if (IsValidFirstName(EmailAddres))
             {
-                Console.WriteLine("Valid first name!");
-
-            }
-            else
-            {
-                Console.WriteLine("Invalid first name");
-            }
-
-            if (IsValidFirstName(lastname))
-            {
-                Console.WriteLine("Valid last name!");
+                Console.WriteLine("Valid EmailAddress!");
 
             }
             else
             {
-                Console.WriteLine("Invalid last name");
+                Console.WriteLine("Invalid  EmailAddress!");
             }
+
+           
         }
-        static bool IsValidFirstName(string firstName)
+        static bool IsValidFirstName(string EmailAddress)
         {
-            string pattern = "^[A-Z][a -zA-Z]{2,}$";
+            string pattern = @"^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*\.(?:[a-zA-Z]{2,})$";
 
-            return Regex.IsMatch(firstName, pattern);
+            return Regex.IsMatch(EmailAddress, pattern);
         }
 
       
