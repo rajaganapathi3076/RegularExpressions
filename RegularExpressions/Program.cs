@@ -13,28 +13,28 @@ namespace RegularExpressions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User registration UC4");
-            Console.WriteLine("Enter your Mobile Number");
-            string mobilenumber=Console.ReadLine();
+            Console.WriteLine("Welcome User registration UC5");
+            Console.Write("Enter your Password: ");
+            string password=Console.ReadLine();
            
 
-            if (IsValidMobileNumber(mobilenumber))
+            if (IsValidPassWord(password))
             {
-                Console.WriteLine("Valid MobileNumber!");
+                Console.WriteLine("Valid Password!");
 
             }
             else
             {
-                Console.WriteLine("Invalid  MobileNumber!");
+                Console.WriteLine("Invalid  Password!");
             }
 
            
         }
-        static bool IsValidMobileNumber(string mobilenumber)
+        static bool IsValidPassWord(string password)     //Rule 1 : Password is Minimum 8 Character
         {
-            string pattern = @"^91 [6-9]{1}[0-9]{9}$";
+            string pattern = @"^[a-zA-Z0-9]{8}$";
 
-            return Regex.IsMatch(mobilenumber, pattern);
+            return Regex.IsMatch(password, pattern);
         }
 
       
