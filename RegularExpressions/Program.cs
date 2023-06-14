@@ -13,28 +13,28 @@ namespace RegularExpressions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User registration UC2");
-            Console.WriteLine("Enter your Email ID");
-            string EmailAddres=Console.ReadLine();
+            Console.WriteLine("Welcome User registration UC4");
+            Console.WriteLine("Enter your Mobile Number");
+            string mobilenumber=Console.ReadLine();
            
 
-            if (IsValidFirstName(EmailAddres))
+            if (IsValidMobileNumber(mobilenumber))
             {
-                Console.WriteLine("Valid EmailAddress!");
+                Console.WriteLine("Valid MobileNumber!");
 
             }
             else
             {
-                Console.WriteLine("Invalid  EmailAddress!");
+                Console.WriteLine("Invalid  MobileNumber!");
             }
 
            
         }
-        static bool IsValidFirstName(string EmailAddress)
+        static bool IsValidMobileNumber(string mobilenumber)
         {
-            string pattern = @"^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*\.(?:[a-zA-Z]{2,})$";
+            string pattern = @"^91 [6-9]{1}[0-9]{9}$";
 
-            return Regex.IsMatch(EmailAddress, pattern);
+            return Regex.IsMatch(mobilenumber, pattern);
         }
 
       
