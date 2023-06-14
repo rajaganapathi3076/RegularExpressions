@@ -13,7 +13,7 @@ namespace RegularExpressions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User registration UC5");
+            Console.WriteLine("Welcome User registration UC6");
             Console.Write("Enter your Password: ");
             string password=Console.ReadLine();
            
@@ -30,9 +30,9 @@ namespace RegularExpressions
 
            
         }
-        static bool IsValidPassWord(string password)     //Rule 1 : Password is Minimum 8 Character
+        static bool IsValidPassWord(string password)     //Rule 2 : Password is Minimum 8 Character and should one upper case//
         {
-            string pattern = @"^[a-zA-Z0-9]{8}$";
+            string pattern = @"^(?=.*[A-Z])[a-zA-Z0-9]{8}$";
 
             return Regex.IsMatch(password, pattern);
         }
